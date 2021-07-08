@@ -1,0 +1,36 @@
+#footer-section {
+     margin: 350px 0; 
+     position: absolute;
+     z-index: 100;
+     left: 0;
+     right: 0;
+}
+
+.footer {
+     padding: 40px 30px;
+     background: $firstColor;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     &__icon-wrapper {
+          width: 150px;
+          //Layout
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          align-items: center;
+          svg {
+               fill: $fourthColorInactive;
+               &:hover { fill: $fourthColor; }
+          }
+     }
+     &__copyright {
+          margin-top: 20px;
+          font-size: $footerText;
+          font-weight: $thin;
+          text-align: center;
+          color: $fourthColor;
+          span { color: $seventhColor; }
+     }
+}

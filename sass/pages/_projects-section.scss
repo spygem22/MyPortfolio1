@@ -1,0 +1,196 @@
+#projects-section {
+     background: $firstColor;
+     box-shadow: $shadow;
+     padding: 15px 30px 150px;
+}
+
+.projects {
+     padding-top: 100px;
+     border-radius: 10px;
+     background: $firstColor;
+     //Layout
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     z-index: 2;
+     &__titleHeader {
+          z-index: 2;
+          font-size: $titleheader;
+          font-weight: $bold;
+          background-image: linear-gradient(
+               to right,
+               $sixthColor,
+               $fifthColor,
+               $seventhColor,
+               $eighthColor
+          );
+          background-size: 100%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent; 
+          -moz-background-clip: text;
+          -moz-text-fill-color: transparent;
+          width: fit-content;
+         
+     }
+     &__box-wrapper {
+          z-index: 2;
+          margin: 50px auto;
+          max-width: 1200px;
+          .project-box {
+               margin-top: 90px;
+               width: 100%;
+               height: auto;
+               &:first-child {
+                    margin-top: 0px;
+               }
+               &__image {
+                    height: fit-content;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 2;
+                    img {
+                         width: 100%;
+                         height: 100%;
+                         font-size: $subRegularText;
+                    }
+               }
+               .project {
+                    margin: 30px 0;
+                    &__title {
+                         color: $seventhColor;
+                         font-size: $subTitle;
+                         font-weight: $semiBold;
+                    }
+                    &__description {
+                         font-size: $subRegularText;
+                         font-weight: $regular;
+                         margin-top: 20px;
+                    }
+                    &__stack {
+                         font-size: $techStack;
+                         color: $fifthColor;
+                         margin-top: 20px;
+                         font-weight: $light;
+                         span { color: $fourthColor; }
+                    }
+                    &__buttons {
+                         margin-top: 50px;
+                         //Layout
+                         display: flex;
+                         flex-direction: column;
+                         align-items: center;
+                         :nth-child(1) {
+                              color: $fourthColor;
+                              border-radius: 10px;
+                              border: 1px solid $eighthColor;
+                              padding: 15px 0;
+                              width: 100%;
+                              text-align: center;
+                              font-size: $buttonText;
+                              font-weight: $semiBold;
+                              z-index: 2;
+                              background: linear-gradient(
+                                   to right,
+                                   $eighthColor 50%,
+                                   $firstColor 50%
+                              ) right;
+                              background-size: 200%;
+                              transition: all 250ms ease-in-out;
+                              &:hover { background-position: left; }
+                         }
+                         :nth-child(2) {
+                              margin-top: 20px;
+                              color: $fourthColor;
+                              border-radius: 10px;
+                              border: 1px solid transparent;
+                              padding: 15px 0;
+                              width: 100%;
+                              text-align: center;
+                              font-size: $buttonText;
+                              font-weight: $semiBold;
+                              box-shadow: $shadow;
+                              z-index: 2;
+                              background: linear-gradient(
+                                   to right,
+                                   $sixthColor,
+                                   $fifthColor,
+                                   $seventhColor,
+                                   $eighthColor,
+                                   $seventhColor,
+                                   $fifthColor,
+                                   $sixthColor
+                              );
+                              background-size: 250% ;
+                              background-position: left;
+                              transition: 250ms background-position ease-in-out;
+                              &:hover {
+                                   background-position: right;
+                                   transition: 500ms;
+                              }
+                         }
+                    }
+               }
+          }
+     }
+     @include for-laptopSmall {
+          .project-box {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               .project {
+                    width: 70%;
+                    margin: 0 25px;
+                    &__buttons {
+                         flex-direction: row;
+                         justify-content: center;
+                         align-items: center;
+                         :nth-child(1) {
+                              font-size: 1.1rem;
+                              width: 200px;
+                              margin-right: 15px;
+                              padding: 15px 0;
+                         }
+                         :nth-child(2) {
+                              font-size: 1.1rem;
+                              width: 200px;
+                              margin: 0 0 0 15px;
+                              padding: 15px 0;
+                         }
+                    }
+               }
+          }
+     }
+     @include for-mobileLarge {
+          &__titleHeader { font-size: 1.8rem; }
+          .project-box {
+               .project {
+                    &__title { font-size: 1.15rem; }
+                    &__description { font-size: 0.85rem; }
+                    &__stack { font-size: 0.75rem; }
+                    &__buttons {
+                         :nth-child(1), :nth-child(2) {
+                              font-size: 1.15rem;
+                              padding: 15px 0;
+                         }
+                    }
+               }
+          }
+     }
+     @include for-mobileMedium {
+          &__titleHeader { font-size: 1.6rem; }
+          .project-box {
+               .project {
+                    &__title { font-size: 1.05rem; }
+                    &__description { font-size: 0.8rem; }
+                    &__stack { font-size: 0.7rem; }
+                    &__buttons {
+                         :nth-child(1), :nth-child(2) {
+                              font-size: 1.05rem;
+                              padding: 12px 0;
+                         }
+                    }
+               }
+          }
+     }
+}

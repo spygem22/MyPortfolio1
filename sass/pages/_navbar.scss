@@ -1,0 +1,186 @@
+header { position: relative; }
+
+.nav {
+     display: none;
+     width: 100%;
+     min-width: 8vh;
+     padding: 20px 50px;
+     background: transparent;
+     position: fixed;
+     transition: 500ms;
+     z-index: 9999;
+     opacity: 0.97;
+     //Layout
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     &.sticky {
+          padding: 30px 50px;
+          background: $firstColor;
+          transition: 500ms;
+          box-shadow: $shadow;
+     }
+     &__brand-logo {
+          background-image: linear-gradient(
+               to right,
+               $sixthColor,
+               $fifthColor,
+               $seventhColor,
+               $eighthColor
+          );
+          background-size: 100%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent; 
+          -moz-background-clip: text;
+          -moz-text-fill-color: transparent;
+          font-size: $brandLogo;
+          font-weight: 600;
+     }
+     &__nav-links {
+          position: fixed;
+          z-index: 500;
+          padding: 100px 0;
+          width: 100%;
+          top: 0;
+          right: 0;
+          background-color: $firstColor;
+          height: 100vh;
+          font-size: $navLinks;
+          transition: transform 250ms ease-in;
+          transform: translateX(100%);
+          //Layout
+          display: flex;
+          justify-content: space-around;
+          flex-direction: column;
+          align-items: center;
+          &.nav-active { transform: translateX(0%); }
+          .nav-link {
+               font-size: $navLinks;
+               opacity: 0;
+               :hover { color: $fourthColor; }
+               a {
+                    //Layout
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+               }
+               a::after {
+                    content: "";
+                    height: 4px;
+                    width: 100%;
+                    background: linear-gradient(
+                         to right,
+                         $sixthColor,
+                         $fifthColor,
+                         $seventhColor,
+                         $eighthColor
+                    );
+                    transform: scale(0,1);
+                    transition: transform 200ms ease-in;
+               }
+               a:hover::after { transform: scale(1,1); }
+               a.active { color: $fourthColor; }
+               a.active::after {
+                    content: "";
+                    height: 4px;
+                    width: 100%;
+                    transform: scale(1,1);
+                    transition: transform 200ms ease-in;
+                    background: linear-gradient(
+                         to right,
+                         $sixthColor,
+                         $fifthColor,
+                         $seventhColor,
+                         $eighthColor
+                    );
+               }
+               @keyframes navLinkFade {
+                    from {
+                    opacity: 0;
+                    transform: translateX(50px);
+                    }
+                    to {
+                    opacity: 1;
+                    transform: translateX(0);
+                    }
+               }
+          }
+     }
+     .burger {
+          position: relative;
+          z-index: 1000;
+          cursor: pointer;
+          div {
+               width: 25px;
+               height: 3px;
+               background: $fourthColor;
+               margin: 5px;
+               transition: all 0.3s ease;
+          }
+          &.toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+          &.toggle .line2 { opacity: 0; }
+          &.toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
+     }
+     @include for-mobileXSmall {
+          padding: 20px 30px;
+          &.sticky { padding: 25px 30px; }
+          &__brand-logo { font-size: 1.1rem; }
+          .burger {
+               div { width: 20px; }
+               &.toggle .line1 { transform: rotate(-45deg) translate(-5px, 4.5px); }
+               &.toggle .line2 { opacity: 0; }
+               &.toggle .line3 { transform: rotate(45deg) translate(-5px, -4.5px); }
+          }
+     }
+     @include for-mobileLarge {
+          &.sticky { padding: 25px 50px; }
+          &__brand-logo { font-size: 1.3rem; }
+          .burger {
+               div {
+                    width: 22.5px;
+                    height: 2px;
+               }
+               &.toggle .line1 { transform: rotate(-45deg) translate(-5px, 5px); }
+               &.toggle .line2 { opacity: 0; }
+               &.toggle .line3 { transform: rotate(45deg) translate(-5px, -5px); }
+          }
+     }
+     @include for-tablet {
+          padding: 20px 75px;
+          &.sticky {
+               padding: 30px 75px;
+          }
+          &__nav-links {
+               all: unset;
+               //Layout
+               display: flex;
+               justify-content: space-around;
+               align-items: center;
+               width: 400px;
+               .nav-link {
+                    font-size: 1.2rem;
+                    opacity: 1;
+               }
+          }
+          .burger {
+               display: none;
+          }
+     }
+     @include for-laptopSmall {
+          padding: 20px 100px;
+          &__brand-logo { font-size: 1.8rem; }
+          &.sticky { padding: 30px 100px; }
+          &__nav-links {
+               width: 450px;
+          }
+     }
+     @include for-laptopMedium {
+          padding: 20px 125px;
+          &__brand-logo { font-size: 1.9rem; }
+          &.sticky { padding: 30px 125px; }
+          &__nav-links {
+               width: 500px;
+          }
+     }
+}

@@ -1,0 +1,140 @@
+#contact-section {
+     position: absolute;
+     left: 0;
+     right: 0;
+     margin: -90px 30px 0px 30px;
+     @include for-laptopSmall {
+          //Layout
+          display: flex;
+          justify-content: center;
+          align-items: center;
+     }
+}
+.contact {
+     padding: 100px 30px;
+     border-radius: 10px;
+     background: $secondColor;
+     box-shadow: $shadow;
+     //Layout
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     &__titleHeader {
+          font-size: $titleheader;
+          font-weight: $bold;
+          background-image: linear-gradient(
+               to right,
+               $sixthColor,
+               $fifthColor,
+               $seventhColor,
+               $eighthColor
+          );
+          background-size: 100%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent; 
+          -moz-background-clip: text;
+          -moz-text-fill-color: transparent;
+          width: fit-content;
+     }
+     &__details {
+          margin-top: 50px;
+          width: 100%;
+          .email {
+               //Layout
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               &__icon {
+                    //Layout
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 10px;
+                    height: auto;
+                    svg {
+                         height: 20px;
+                         width: 20px;
+                    }
+               }
+               &__address {
+                    font-size: $regularText;
+                    font-weight: $semiBold;
+                    span {
+                         font-weight: $regular;
+                    }
+               }
+          }
+          .phone {
+               margin-top: 25px;
+               //Layout
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               &__icon {
+                    //Layout
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 10px;
+                    height: auto;
+                    svg {
+                         height: 20px;
+                         width: 20px;
+                    }
+               }
+               &__number {
+                    font-size: $regularText;
+                    font-weight: $semiBold;
+                    span {
+                         font-weight: $regular;
+                    }
+               }
+          }
+     }
+     @include for-laptopSmall { width: 900px; }
+     @include for-mobileLarge {
+          &__titleHeader { font-size: 1.8rem; }
+          .email {
+               &__icon {
+                    height: 18px;
+                    width: 18px;
+               }
+               &__address { font-size: 0.9rem; }
+          }
+          .phone {
+               &__icon {
+                    height: 18px;
+                    width: 18px;
+               }
+               &__number { font-size: 0.9rem; }
+          }
+
+     }
+     @include for-mobileMedium {
+          &__titleHeader { font-size: 1.6rem; }
+          .email {
+               &__address { font-size: 0.8rem; }
+          }
+          .phone {
+               &__number { font-size: 0.8rem; }
+          }
+     }
+     @include for-mobileSmall {
+          &__titleHeader { font-size: 1.6rem; }
+          .email {
+               &__icon {
+                    height: 16px;
+                    width: 16px;
+               }
+               &__address { font-size: 0.7rem; }
+          }
+          .phone {
+               &__icon {
+                    height: 16px;
+                    width: 16px;
+               }
+               &__number { font-size: 0.7rem; }
+          }
+     }
+}

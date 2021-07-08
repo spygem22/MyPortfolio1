@@ -1,0 +1,117 @@
+#about-me-section {
+     margin: 50px 0;
+     padding: 30px;
+     @include for-tablet {
+          background: transparent;
+          //Layout
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+     }
+}
+
+.about {
+     background: $secondColor;
+     padding: 100px 30px;
+     border-radius: 10px;
+     box-shadow: $shadow;
+     //Layout
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+     &__headerTitle {
+          width: fit-content;
+          font-size: $titleheader;
+          font-weight: $bold;
+          background-image: linear-gradient(
+               to right,
+               $sixthColor,
+               $fifthColor,
+               $seventhColor,
+               $eighthColor
+          );
+          background-size: 100%;
+          z-index: 2;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent; 
+          -moz-background-clip: text;
+          -moz-text-fill-color: transparent;
+     }
+     &__text-wrapper {
+          margin-top: 30px;
+          .about-text {
+               margin-top: 15px;
+               font-size: $regularText;
+               line-height: 1.8rem;
+               z-index: 2;
+               u {
+                    text-decoration: underline;
+                    text-decoration-color: $seventhColor;
+                    text-decoration-thickness: 0.15rem;
+               }
+          }
+     }
+     &__CV-button {
+          width: 100%;
+          margin-top: 45px;
+          padding: 15px 0;
+          background: linear-gradient(
+               to right,
+               $sixthColor,
+               $fifthColor,
+               $seventhColor,
+               $eighthColor,
+               $seventhColor,
+               $fifthColor,
+               $sixthColor
+          );
+          background-size: 250% ;
+          background-position: left;
+          transition: 250ms background-position ease-in-out;
+          border-radius: 10px;
+          font-size: $buttonText;
+          font-weight: $semiBold;
+          color: $fourthColor;
+          text-align: center;
+          box-shadow: $shadow;
+          z-index: 2;
+          &:hover {
+               background-position: right;
+               transition: 500ms;
+          }
+     }
+     @include for-tablet {
+          padding: 100px 80px;
+          background: $secondColor;
+          min-width: 500px;
+          max-width: 900px;
+          width: 95%;
+          align-items: flex-start;
+          &__text-wrapper { max-width: 600px; }
+          &__CV-button { max-width: 300px; }
+     }
+     @include for-mobileLarge {
+          &__headerTitle { font-size: 1.8rem; }
+          &__text-wrapper {
+               .about-text { font-size: 0.9rem; }
+          }
+          &__CV-button {
+               padding: 15px 0;
+               font-size: 1.15rem;
+          }
+     }
+     @include for-mobileMedium {
+          &__headerTitle { font-size: 1.6rem; }
+          &__text-wrapper {
+               .about-text { font-size: 0.8rem; }
+          }
+          &__CV-button {
+               padding: 12px 0;
+               font-size: 1.05rem;
+          }
+     }
+     @include for-mobileXSmall {
+          &__headerTitle { font-size: 1.4rem; }
+     }
+}

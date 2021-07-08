@@ -1,0 +1,55 @@
+//This is where media queries for responsiveness goes to.
+
+@mixin for-mobileXSmall {
+     @media screen and (max-width: $mobile-XSmall) {
+          @content;
+     }
+}
+
+@mixin for-mobileSmall {
+     @media screen and (max-width: $mobile-small) {
+          @content;
+     }
+}
+
+@mixin for-mobileMedium {
+     @media screen and (max-width: $mobile-medium) {
+          @content;
+     }
+}
+
+@mixin for-mobileLarge {
+     @media screen and (max-width: $mobile-large) {
+          @content;
+     }
+}
+
+@mixin for-tablet {
+     @media screen and (min-width: $tablet) {
+          @content;
+     }
+}
+
+@mixin for-laptopSmall {
+     @media screen and (min-width: $laptop-small) {
+          @content;
+     }
+}
+
+@mixin for-laptopMedium {
+     @media screen and (min-width: $laptop-medium) {
+          @content;
+     }
+}
+
+@mixin for-laptopLarge {
+     @media screen and (min-width: $laptop-large) {
+          @content;
+     }
+}
+
+@mixin for-4kScreens {
+     @media screen and (min-width: $screen4k) {
+          @content;
+     }
+}

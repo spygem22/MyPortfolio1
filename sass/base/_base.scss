@@ -1,0 +1,38 @@
+//This is where default styling of the page goes.
+
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+body {
+     background: $thirdColor;
+     font-size: $defaultFontSize;
+     font-weight: 400;
+     color: $fourthColor;
+     font-family: $Nunito, $sans-serif;
+     &::-webkit-scrollbar { width: 12.5px; }
+     &::-webkit-scrollbar-track { background: $secondColor; }
+     &::-webkit-scrollbar-thumb {
+          background: $fourthColorInactive;
+          border-radius: 15px;
+          height: 15px;
+     }
+     overflow-x: hidden;
+}
+.container { background: $thirdColor; }
+
+main {
+     width: 100%;
+     height: 100%;
+     position: relative;
+}
+
+li { list-style: none; }
+
+a {
+     text-decoration: none;
+     color: $fourthColorInactive;
+     outline: none;
+}
